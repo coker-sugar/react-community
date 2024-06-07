@@ -1,0 +1,24 @@
+.marginRight {
+    margin-right: 20px;
+}
+/* .marginRight:hover {
+    color: aqua;
+} */
+
+.navlink { 
+    text-decoration: none; 
+    color: white;
+}
+.navlink:hover { 
+    color: aqua;
+    text-decoration: underline; 
+}
+
+.linkNow {
+    color: aqua;
+}
+
+.flexbox {
+    width:60vw;
+    justify-content:"space-around";
+}

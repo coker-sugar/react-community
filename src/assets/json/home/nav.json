@@ -1,0 +1,10 @@
+{
+    "categories": [
+      {"id": 0, "name": "首页","path":"/"},
+      {"id": 1, "name": "文章","path":"/article/10001"},
+      {"id": 2, "name": "活动","path":"/activity"},
+      {"id": 3, "name": "问答","path":"/question"},
+      {"id": 4, "name": "课堂","path":"/course"},
+      {"id": 5, "name": "文档","path":"/textpage"}
+    ]
+}
