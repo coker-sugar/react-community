@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# `npm install` 安装
+# `npm start` 运行
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+为一个技术社区设计并实现一个官网，实现但不限于以下功能：
+### 1.首页
+1. 基本布局：导航栏+搜索框 —— 轮播图+热门文章列表 —— tab组件 —— 文章列表
+2. 模糊搜索框（搜索防抖）
+3. navbar导航（路由变换切换页面&激活高亮）
+4. 轮播图（自动轮播5s&手动切换）
+5. tab组件（切换内容&激活高亮）
+6. 热门文章列表组件
+   -  ⽂章标题⼀⾏展示，展示不下使⽤省略号代替展示。
+   -  ⿏标光标 hover 的⽓泡提示功能，⽂章标题⽓泡内全量展示。
+   -  点击⽂章进⾏跳转⽂章详情⻚（新标签⻚），检查路由传参数
+7. 首页文章列表组件
+   - 检查列表元素：⽂章标题⼀⾏展示（展示不下省略号代替）、⽂章内容简介、⽂章发布时间、⽂章发布作者、⽂章图⽚（没有设置则不展示）。
+   - hover ⽂章对该⽂章进⾏⾼亮提示处理。
+   - 点击⽂章进⾏跳转⽂章详情⻚，检查路由传参
 
-## Available Scripts
+### 2.详情页
+1. 页面布局：标题——基本信息——内容——评论区
+2. 评论区：回复评论，发表文章，点赞
+   
+### 3.专栏页
+1. tab组件（切换内容&激活高亮）
+2. 专栏页卡片：图片——基本信息——标题——副标题——了解详情 & 图片懒加载
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4.总结
+   总体来说，react是初学，用起来有点磕磕绊绊，但整体使用起来还不错，有vue的基础在，其实组件化的思想是相通的，不够react确实比vue使用起来更丝滑，开发体验感更好，更多的是注重js的书写，感觉更有意思。
+​   这个网页最困难的点在评论功能那一块，花费了很多时间，主要是对redux不熟悉，用起来像axios，但也有一些区别，我想整体管理评论的数据（放在store/index)下，又想根据ArticleDetail/index.tsx中拿到的id来筛选要展示的那一篇文章，本来是想着把id传给store那边处理，但是弄了半天不知道为啥报错，最后还是选择把所有对文章数据管理的redux（articleReducer，setArticle等）统一放入ArticleDetail/index.tsx处理，这个又导致了数据第一次能修改，但之后再进行修改（比如修改点赞isLike的布尔值）就无法正常修改，应该是视图层可以正确修改数据，但redux数据层无法再正常返回数据。所以这里导致出现了一些bug：如点赞能赞很多次，评论框只能隐藏不能显示，后续有时间再回来改改。
